@@ -5,10 +5,11 @@ recording.
 (Including pointer type structure nesting, pointer slices, pointer Maps, etc.)
 
 # Usage
-- `go get -u github.com/hold7techs/goval`
-- func
-  - `fmt.Printf("%s", goval.ToString(v))` 
-  - `fmt.Printf("%s", goval.ToTypeString(v))`
+`go get -u github.com/hold7techs/goval`
+
+# Feature
+1. **Easy Using**: `goval.ToString(v)`, `goval.ToTypeString(v)`
+2. **Sort Map Key**
 
 # Example
 
@@ -104,6 +105,18 @@ chan => (chan int)(0x140000aa3c0)
 
 The performance is not very good, but it can be used normally, and performance optimization may be done in the future!
 
+## v0.2.0
+```
+$ go test -benchmem -bench .
+goos: darwin
+goarch: arm64
+pkg: github.com/hold7techs/goval
+BenchmarkGetGoString-10           620848              1942 ns/op             912 B/op         44 allocs/op
+PASS
+ok      github.com/hold7techs/goval     2.294s
+```
+
+## v0.1.0
 ```
 $ go test -benchmem -bench .
 goos: darwin
@@ -113,3 +126,4 @@ BenchmarkGetGoString-10           304468              3438 ns/op            2465
 PASS
 ok      github.com/hold7techs/goval     1.167s
 ```
+
